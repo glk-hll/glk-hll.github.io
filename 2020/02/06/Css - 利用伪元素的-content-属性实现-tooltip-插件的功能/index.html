@@ -8,24 +8,25 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Vue-组件间的六种通信方式 - 爆开的个人博客</title>
+<title>Css - 利用伪元素的 content 属性实现 tooltip 插件的功能 - 爆开的个人博客</title>
 
 
-    <meta name="description" content="本文借鉴自组件通信，是我看到的很好的一篇关于Vue组件间通信的文章。 关于Vue中组件的介绍可以看我的这篇文章,这里只做一些简单的介绍：  先看上图↑， 上面的图是一个Vue项目很基本的部分组件之间的可能出现关系，总结如下：  A组件有两个子组件： B组件、C组件； B组件和C组件之间是同级组件(兄弟组件)； B组件和C组件分别有自己的子组件：D组件、F组件 以及 E组件； D、E、F组件又同时是">
+    <meta name="description" content="当要实现元素 hover 的时候显示提示信息，如果用 title 属性觉得效果太弱，但是又不想用JS写，更不想引入一个 tooltip 第三方的大库，这个时候可以用CSS3的attr 属性实现，将想要展示的提示内容放到一个属性里面，而且样式可以由自己设计！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue-组件间的六种通信方式">
-<meta property="og:url" content="http://yoursite.com/2019/12/06/Vue%E7%BB%84%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%85%AD%E7%A7%8D%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F/index.html">
+<meta property="og:title" content="Css - 利用伪元素的 content 属性实现 tooltip 插件的功能">
+<meta property="og:url" content="http://yoursite.com/2020/02/06/Css%20-%20%E5%88%A9%E7%94%A8%E4%BC%AA%E5%85%83%E7%B4%A0%E7%9A%84-content-%E5%B1%9E%E6%80%A7%E5%AE%9E%E7%8E%B0-tooltip-%E6%8F%92%E4%BB%B6%E7%9A%84%E5%8A%9F%E8%83%BD/index.html">
 <meta property="og:site_name" content="爆开的个人博客">
-<meta property="og:description" content="本文借鉴自组件通信，是我看到的很好的一篇关于Vue组件间通信的文章。 关于Vue中组件的介绍可以看我的这篇文章,这里只做一些简单的介绍：  先看上图↑， 上面的图是一个Vue项目很基本的部分组件之间的可能出现关系，总结如下：  A组件有两个子组件： B组件、C组件； B组件和C组件之间是同级组件(兄弟组件)； B组件和C组件分别有自己的子组件：D组件、F组件 以及 E组件； D、E、F组件又同时是">
+<meta property="og:description" content="当要实现元素 hover 的时候显示提示信息，如果用 title 属性觉得效果太弱，但是又不想用JS写，更不想引入一个 tooltip 第三方的大库，这个时候可以用CSS3的attr 属性实现，将想要展示的提示内容放到一个属性里面，而且样式可以由自己设计！">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://user-images.githubusercontent.com/44257305/70319109-7a87cf00-185c-11ea-905c-fc7fae2f22a9.jpg">
-<meta property="article:published_time" content="2019-12-06T10:57:00.000Z">
-<meta property="article:modified_time" content="2020-10-20T09:03:08.982Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/44257305/96856046-1976e300-1490-11eb-8441-4a8c5409f326.jpg">
+<meta property="article:published_time" content="2020-02-06T04:07:00.000Z">
+<meta property="article:modified_time" content="2020-10-22T09:58:14.330Z">
 <meta property="article:author" content="Glk">
-<meta property="article:tag" content="vue">
-<meta property="article:tag" content="组件通信">
+<meta property="article:tag" content="css">
+<meta property="article:tag" content="开发小技巧">
+<meta property="article:tag" content="伪元素">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://user-images.githubusercontent.com/44257305/70319109-7a87cf00-185c-11ea-905c-fc7fae2f22a9.jpg">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/44257305/96856046-1976e300-1490-11eb-8441-4a8c5409f326.jpg">
 
 
 
@@ -84,7 +85,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.png" alt="Vue-组件间的六种通信方式" height="28">
+                <img src="/images/logo.png" alt="Css - 利用伪元素的 content 属性实现 tooltip 插件的功能" height="28">
             
             </a>
         </div>
@@ -138,7 +139,7 @@
     
     <div class="card-image">
         <span  class="image is-7by1">
-            <img class="thumbnail" src="https://user-images.githubusercontent.com/44257305/70319109-7a87cf00-185c-11ea-905c-fc7fae2f22a9.jpg" alt="Vue-组件间的六种通信方式">
+            <img class="thumbnail" src="https://user-images.githubusercontent.com/44257305/96856046-1976e300-1490-11eb-8441-4a8c5409f326.jpg" alt="Css - 利用伪元素的 content 属性实现 tooltip 插件的功能">
         </span>
     </div>
     
@@ -146,17 +147,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-06T10:57:00.000Z">2019-12-06</time>
+                <time class="level-item has-text-grey" datetime="2020-02-06T04:07:00.000Z">2020-02-06</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF-Vue/">前端/Vue</a>
+                <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91-CSS/">前端开发/CSS</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 357 个字)
+                    2 分钟 读完 (大约 352 个字)
                 </span>
                 
                 
@@ -165,34 +166,21 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Vue-组件间的六种通信方式
+                Css - 利用伪元素的 content 属性实现 tooltip 插件的功能
             
         </h1>
         <div class="content">
-            <html><head></head><body><p>本文借鉴自<a href="https://juejin.im/post/5cde0b43f265da03867e78d3" target="_blank" rel="noopener">组件通信</a>，是我看到的很好的一篇关于Vue组件间通信的文章。</p>
-<p>关于Vue中组件的介绍可以看我的<a href>这篇文章</a>,这里只做一些简单的介绍：</p>
-<p><img src="https://user-images.githubusercontent.com/44257305/70318680-8fb02e00-185b-11ea-9fac-9fe8489d42f0.png" alt="组件之前的关系"></p>
-<p><strong>先看上图↑</strong>， 上面的图是一个Vue项目很基本的部分组件之间的可能出现关系，总结如下：</p>
+            <html><head></head><body><p>  <strong>当要实现元素 hover 的时候显示提示信息，如果用 title 属性觉得效果太弱，但<br>是又不想用JS写，更不想引入一个 tooltip 第三方的大库，这个时候可以用CSS3的<br>attr 属性实现，将想要展示的提示内容放到一个属性里面，而且样式可以由自己设计！</strong></p>
+<a id="more"></a>
+<figure class="highlight html hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag"><<span class="hljs-name">p</span>></span>其实, <span class="hljs-tag"><<span class="hljs-name">span</span> <span class="hljs-attr">data-title</span>=<span class="hljs-string">'Are you sure?'</span>></span>我一直在努力！<span class="hljs-tag"></<span class="hljs-name">span</span>></span><span class="hljs-tag"></<span class="hljs-name">p</span>></span></span><br><span class="line"></span><br><span class="line"><span class="hljs-tag"><<span class="hljs-name">style</span>></span></span><br><span class="line">    p{</span><br><span class="line">       padding-top: 20px;</span><br><span class="line"><span class="hljs-css">       <span class="hljs-selector-tag">color</span>: <span class="hljs-selector-id">#333</span>;</span></span><br><span class="line">     }</span><br><span class="line"></span><br><span class="line"><span class="hljs-css">     <span class="hljs-selector-tag">span</span><span class="hljs-selector-attr">[data-title]</span>{</span></span><br><span class="line">     	position: relative;</span><br><span class="line">     }</span><br><span class="line">     </span><br><span class="line"><span class="hljs-css">     <span class="hljs-selector-tag">span</span><span class="hljs-selector-attr">[data-title]</span><span class="hljs-selector-pseudo">:hover</span><span class="hljs-selector-pseudo">:before</span>{</span></span><br><span class="line">       content: attr(data-title);</span><br><span class="line">       position: absolute;</span><br><span class="line">       top: -160%;</span><br><span class="line">       left: 50%;</span><br><span class="line">       height: 20px;</span><br><span class="line"><span class="hljs-css">       <span class="hljs-selector-tag">background-color</span>: <span class="hljs-selector-id">#FF9800</span>;</span></span><br><span class="line">       border-radius: 5px;</span><br><span class="line">       padding: 5px;</span><br><span class="line">       color: white;</span><br><span class="line">       transform: translateX(-50%);</span><br><span class="line">       white-space: nowrap;</span><br><span class="line">     }</span><br><span class="line"></span><br><span class="line"><span class="hljs-css">     <span class="hljs-comment">/* 小三角形 */</span></span></span><br><span class="line"><span class="hljs-css">     <span class="hljs-selector-tag">span</span><span class="hljs-selector-attr">[data-title]</span><span class="hljs-selector-pseudo">:hover</span><span class="hljs-selector-pseudo">::after</span>{</span></span><br><span class="line">       content: '';</span><br><span class="line">       position: absolute;</span><br><span class="line">       top: -35%;</span><br><span class="line">       left: 50%;</span><br><span class="line">       border-left: 10px solid transparent;</span><br><span class="line">       border-right: 10px solid transparent;</span><br><span class="line"><span class="hljs-css">       <span class="hljs-selector-tag">border-top</span>: 10<span class="hljs-selector-tag">px</span> <span class="hljs-selector-tag">solid</span> <span class="hljs-selector-id">#FF9800</span>;</span></span><br><span class="line">       transform: translateX(-50%);</span><br><span class="line">     }</span><br><span class="line"><span class="hljs-tag"></<span class="hljs-name">style</span>></span></span><br></pre></td></tr></tbody></table></figure>
+<p>上面最核心的代码就是 content: attr(data-title); </p>
+<p>由此介绍下 content 属性可以使用哪些常见的值:</p>
 <ul>
-<li>A组件有两个子组件： B组件、C组件；</li>
-<li>B组件和C组件之间是同级组件(兄弟组件)；</li>
-<li>B组件和C组件分别有自己的子组件：D组件、F组件 以及 E组件；</li>
-<li>D、E、F组件又同时是A组件的后代组件，反过来A组件是它们的祖先组件；   </li>
+<li>[String] 使用 ‘’ 包括一段字符串将作为该伪元素显示的内容</li>
+<li>attr() 将用当前伪元素父元素的某个属性值作为该伪元素显示的内容(如图片的 alt 属性或 a链接的 href 属性等)</li>
+<li>url() 引用媒体文件作为该伪元素显示的内容(如 url(‘./public/images/avatar.png’))</li>
 </ul>
-<p>那么以上关系可能就会发生下面几种对应关系之间的通信：</p>
-<ol>
-<li>父子组件之间的通信；</li>
-<li>兄弟组件之间的通信；</li>
-<li>祖先和后代组件之间的通信；</li>
-</ol>
-<hr>
-<h4 id="上有政策下有对策，下面介绍几种能够解决上述问题的方法"><a href="#上有政策下有对策，下面介绍几种能够解决上述问题的方法" class="headerlink" title="上有政策下有对策，下面介绍几种能够解决上述问题的方法"></a>上有政策下有对策，下面介绍几种能够解决上述问题的方法</h4><ul>
-<li><p><strong>props / $emit</strong><br>解决: 父子组件之间的通信问题</p>
-<ul>
-<li>1.父组件向子组件传值<br>示例: parent 组件向 child 组件传递 msg 属性</li>
-</ul>
-</li>
-</ul>
+<p>关于 <strong>小三角形</strong> 有一篇专门介绍如何用 Css 绘制常见的小图形的，可以<a href>看这里</a><br>关于 <strong>伪元元素</strong> 的介绍可以<a href>看这里</a></p>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
         </div>
         
@@ -200,7 +188,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/vue/" rel="tag">vue</a>, <a class="has-link-grey -link" href="/tags/%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/" rel="tag">组件通信</a>
+                    <a class="has-link-grey -link" href="/tags/css/" rel="tag">css</a>, <a class="has-link-grey -link" href="/tags/%E4%BC%AA%E5%85%83%E7%B4%A0/" rel="tag">伪元素</a>, <a class="has-link-grey -link" href="/tags/%E5%BC%80%E5%8F%91%E5%B0%8F%E6%8A%80%E5%B7%A7/" rel="tag">开发小技巧</a>
                 </div>
             </div>
         </div>
@@ -247,16 +235,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/02/06/Css-%E5%88%A9%E7%94%A8%E4%BC%AA%E5%85%83%E7%B4%A0%E7%9A%84-content-%E5%B1%9E%E6%80%A7%E5%AE%9E%E7%8E%B0-tooltip-%E6%8F%92%E4%BB%B6%E7%9A%84%E5%8A%9F%E8%83%BD/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/06/02/PS-%E5%9B%BE%E7%89%87%E7%9A%84%E8%A3%81%E5%88%87/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Css-利用伪元素的 content 属性实现 tooltip 插件的功能</span>
+                <span class="level-item">PS - 图片的裁切</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/12/03/JS%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3/">
-                <span class="level-item">Js-数组方法详解</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/12/06/Vue%20-%20%E7%BB%84%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%85%AD%E7%A7%8D%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F/">
+                <span class="level-item">Vue - 组件间的六种通信方式</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -539,16 +527,16 @@
         
         <article class="media">
             
-            <a href="/2020/06/02/PS%E2%80%94%E2%80%94%E5%9B%BE%E7%89%87%E7%9A%84%E8%A3%81%E5%88%87/" class="media-left">
+            <a href="/2020/10/20/Postman%20-%20%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail small" src="/images/thumbnail.svg" alt="PS——图片的裁切">
+                    <img class="thumbnail small" src="https://user-images.githubusercontent.com/44257305/96853854-6c9b6680-148d-11eb-9e88-19a394ba5d27.jpg" alt="Postman - 进阶使用">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-02T02:36:28.000Z">2020-06-02</time></div>
-                    <a href="/2020/06/02/PS%E2%80%94%E2%80%94%E5%9B%BE%E7%89%87%E7%9A%84%E8%A3%81%E5%88%87/" class="title has-link-black-ter is-size-6 has-text-weight-normal">PS——图片的裁切</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-20T09:31:00.000Z">2020-10-20</time></div>
+                    <a href="/2020/10/20/Postman%20-%20%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Postman - 进阶使用</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -558,16 +546,35 @@
         
         <article class="media">
             
-            <a href="/2020/02/06/Css-%E5%88%A9%E7%94%A8%E4%BC%AA%E5%85%83%E7%B4%A0%E7%9A%84-content-%E5%B1%9E%E6%80%A7%E5%AE%9E%E7%8E%B0-tooltip-%E6%8F%92%E4%BB%B6%E7%9A%84%E5%8A%9F%E8%83%BD/" class="media-left">
+            <a href="/2020/06/02/PS-%E5%9B%BE%E7%89%87%E7%9A%84%E8%A3%81%E5%88%87/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail small" src="/images/thumbnail.svg" alt="Css-利用伪元素的 content 属性实现 tooltip 插件的功能">
+                    <img class="thumbnail small" src="https://user-images.githubusercontent.com/44257305/96855844-dddc1900-148f-11eb-9146-038ff05c777c.jpg" alt="PS - 图片的裁切">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-02T02:36:28.000Z">2020-06-02</time></div>
+                    <a href="/2020/06/02/PS-%E5%9B%BE%E7%89%87%E7%9A%84%E8%A3%81%E5%88%87/" class="title has-link-black-ter is-size-6 has-text-weight-normal">PS - 图片的裁切</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/06/Css%20-%20%E5%88%A9%E7%94%A8%E4%BC%AA%E5%85%83%E7%B4%A0%E7%9A%84-content-%E5%B1%9E%E6%80%A7%E5%AE%9E%E7%8E%B0-tooltip-%E6%8F%92%E4%BB%B6%E7%9A%84%E5%8A%9F%E8%83%BD/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail small" src="https://user-images.githubusercontent.com/44257305/96856046-1976e300-1490-11eb-8441-4a8c5409f326.jpg" alt="Css - 利用伪元素的 content 属性实现 tooltip 插件的功能">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-06T04:07:00.000Z">2020-02-06</time></div>
-                    <a href="/2020/02/06/Css-%E5%88%A9%E7%94%A8%E4%BC%AA%E5%85%83%E7%B4%A0%E7%9A%84-content-%E5%B1%9E%E6%80%A7%E5%AE%9E%E7%8E%B0-tooltip-%E6%8F%92%E4%BB%B6%E7%9A%84%E5%8A%9F%E8%83%BD/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Css-利用伪元素的 content 属性实现 tooltip 插件的功能</a>
+                    <a href="/2020/02/06/Css%20-%20%E5%88%A9%E7%94%A8%E4%BC%AA%E5%85%83%E7%B4%A0%E7%9A%84-content-%E5%B1%9E%E6%80%A7%E5%AE%9E%E7%8E%B0-tooltip-%E6%8F%92%E4%BB%B6%E7%9A%84%E5%8A%9F%E8%83%BD/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Css - 利用伪元素的 content 属性实现 tooltip 插件的功能</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91-CSS/">前端开发/CSS</a>
                     </p>
@@ -577,16 +584,16 @@
         
         <article class="media">
             
-            <a href="/2019/12/06/Vue%E7%BB%84%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%85%AD%E7%A7%8D%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F/" class="media-left">
+            <a href="/2019/12/06/Vue%20-%20%E7%BB%84%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%85%AD%E7%A7%8D%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail small" src="https://user-images.githubusercontent.com/44257305/70319109-7a87cf00-185c-11ea-905c-fc7fae2f22a9.jpg" alt="Vue-组件间的六种通信方式">
+                    <img class="thumbnail small" src="https://user-images.githubusercontent.com/44257305/70319109-7a87cf00-185c-11ea-905c-fc7fae2f22a9.jpg" alt="Vue - 组件间的六种通信方式">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-06T10:57:00.000Z">2019-12-06</time></div>
-                    <a href="/2019/12/06/Vue%E7%BB%84%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%85%AD%E7%A7%8D%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Vue-组件间的六种通信方式</a>
+                    <a href="/2019/12/06/Vue%20-%20%E7%BB%84%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%85%AD%E7%A7%8D%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Vue - 组件间的六种通信方式</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF-Vue/">前端/Vue</a>
                     </p>
@@ -596,37 +603,18 @@
         
         <article class="media">
             
-            <a href="/2019/12/03/JS%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3/" class="media-left">
+            <a href="/2019/12/03/JS%20-%20%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail small" src="https://user-images.githubusercontent.com/44257305/70061219-da913200-161e-11ea-946f-883d085ce3dd.png" alt="Js-数组方法详解">
+                    <img class="thumbnail small" src="https://user-images.githubusercontent.com/44257305/70061219-da913200-161e-11ea-946f-883d085ce3dd.png" alt="Js - 数组方法详解">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-03T12:54:00.000Z">2019-12-03</time></div>
-                    <a href="/2019/12/03/JS%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Js-数组方法详解</a>
+                    <a href="/2019/12/03/JS%20-%20%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Js - 数组方法详解</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/12/02/%E6%89%8B%E6%9C%BA%E5%8D%A1%EF%BC%9F%E6%B2%A1%E6%9C%89%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4%E4%BA%86%EF%BC%9F%E8%AF%95%E8%AF%95%E6%88%91%E8%BF%99%E4%B8%AA%E5%B7%A5%E5%85%B7%EF%BC%81/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail small" src="https://user-images.githubusercontent.com/44257305/69972569-d0a6fa80-155c-11ea-908a-88af1176e1e0.jpg" alt="手机卡？没有存储空间了？试试这个工具！">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-02T13:44:00.000Z">2019-12-02</time></div>
-                    <a href="/2019/12/02/%E6%89%8B%E6%9C%BA%E5%8D%A1%EF%BC%9F%E6%B2%A1%E6%9C%89%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4%E4%BA%86%EF%BC%9F%E8%AF%95%E8%AF%95%E6%88%91%E8%BF%99%E4%B8%AA%E5%B7%A5%E5%85%B7%EF%BC%81/" class="title has-link-black-ter is-size-6 has-text-weight-normal">手机卡？没有存储空间了？试试这个工具！</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E5%B0%8F%E5%B7%A5%E5%85%B7-Android/">小工具/Android</a>
                     </p>
                 </div>
             </div>
@@ -642,6 +630,17 @@
             归档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2020/06/">
@@ -682,7 +681,7 @@
                     <span class="level-item">十一月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -870,16 +869,16 @@
         
         <article class="media">
             
-            <a href="/2020/06/02/PS%E2%80%94%E2%80%94%E5%9B%BE%E7%89%87%E7%9A%84%E8%A3%81%E5%88%87/" class="media-left">
+            <a href="/2020/10/20/Postman%20-%20%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail small" src="/images/thumbnail.svg" alt="PS——图片的裁切">
+                    <img class="thumbnail small" src="https://user-images.githubusercontent.com/44257305/96853854-6c9b6680-148d-11eb-9e88-19a394ba5d27.jpg" alt="Postman - 进阶使用">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-02T02:36:28.000Z">2020-06-02</time></div>
-                    <a href="/2020/06/02/PS%E2%80%94%E2%80%94%E5%9B%BE%E7%89%87%E7%9A%84%E8%A3%81%E5%88%87/" class="title has-link-black-ter is-size-6 has-text-weight-normal">PS——图片的裁切</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-20T09:31:00.000Z">2020-10-20</time></div>
+                    <a href="/2020/10/20/Postman%20-%20%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Postman - 进阶使用</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -889,16 +888,35 @@
         
         <article class="media">
             
-            <a href="/2020/02/06/Css-%E5%88%A9%E7%94%A8%E4%BC%AA%E5%85%83%E7%B4%A0%E7%9A%84-content-%E5%B1%9E%E6%80%A7%E5%AE%9E%E7%8E%B0-tooltip-%E6%8F%92%E4%BB%B6%E7%9A%84%E5%8A%9F%E8%83%BD/" class="media-left">
+            <a href="/2020/06/02/PS-%E5%9B%BE%E7%89%87%E7%9A%84%E8%A3%81%E5%88%87/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail small" src="/images/thumbnail.svg" alt="Css-利用伪元素的 content 属性实现 tooltip 插件的功能">
+                    <img class="thumbnail small" src="https://user-images.githubusercontent.com/44257305/96855844-dddc1900-148f-11eb-9146-038ff05c777c.jpg" alt="PS - 图片的裁切">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-02T02:36:28.000Z">2020-06-02</time></div>
+                    <a href="/2020/06/02/PS-%E5%9B%BE%E7%89%87%E7%9A%84%E8%A3%81%E5%88%87/" class="title has-link-black-ter is-size-6 has-text-weight-normal">PS - 图片的裁切</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/06/Css%20-%20%E5%88%A9%E7%94%A8%E4%BC%AA%E5%85%83%E7%B4%A0%E7%9A%84-content-%E5%B1%9E%E6%80%A7%E5%AE%9E%E7%8E%B0-tooltip-%E6%8F%92%E4%BB%B6%E7%9A%84%E5%8A%9F%E8%83%BD/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail small" src="https://user-images.githubusercontent.com/44257305/96856046-1976e300-1490-11eb-8441-4a8c5409f326.jpg" alt="Css - 利用伪元素的 content 属性实现 tooltip 插件的功能">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-06T04:07:00.000Z">2020-02-06</time></div>
-                    <a href="/2020/02/06/Css-%E5%88%A9%E7%94%A8%E4%BC%AA%E5%85%83%E7%B4%A0%E7%9A%84-content-%E5%B1%9E%E6%80%A7%E5%AE%9E%E7%8E%B0-tooltip-%E6%8F%92%E4%BB%B6%E7%9A%84%E5%8A%9F%E8%83%BD/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Css-利用伪元素的 content 属性实现 tooltip 插件的功能</a>
+                    <a href="/2020/02/06/Css%20-%20%E5%88%A9%E7%94%A8%E4%BC%AA%E5%85%83%E7%B4%A0%E7%9A%84-content-%E5%B1%9E%E6%80%A7%E5%AE%9E%E7%8E%B0-tooltip-%E6%8F%92%E4%BB%B6%E7%9A%84%E5%8A%9F%E8%83%BD/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Css - 利用伪元素的 content 属性实现 tooltip 插件的功能</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91-CSS/">前端开发/CSS</a>
                     </p>
@@ -908,16 +926,16 @@
         
         <article class="media">
             
-            <a href="/2019/12/06/Vue%E7%BB%84%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%85%AD%E7%A7%8D%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F/" class="media-left">
+            <a href="/2019/12/06/Vue%20-%20%E7%BB%84%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%85%AD%E7%A7%8D%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail small" src="https://user-images.githubusercontent.com/44257305/70319109-7a87cf00-185c-11ea-905c-fc7fae2f22a9.jpg" alt="Vue-组件间的六种通信方式">
+                    <img class="thumbnail small" src="https://user-images.githubusercontent.com/44257305/70319109-7a87cf00-185c-11ea-905c-fc7fae2f22a9.jpg" alt="Vue - 组件间的六种通信方式">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-06T10:57:00.000Z">2019-12-06</time></div>
-                    <a href="/2019/12/06/Vue%E7%BB%84%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%85%AD%E7%A7%8D%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Vue-组件间的六种通信方式</a>
+                    <a href="/2019/12/06/Vue%20-%20%E7%BB%84%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%85%AD%E7%A7%8D%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Vue - 组件间的六种通信方式</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF-Vue/">前端/Vue</a>
                     </p>
@@ -927,37 +945,18 @@
         
         <article class="media">
             
-            <a href="/2019/12/03/JS%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3/" class="media-left">
+            <a href="/2019/12/03/JS%20-%20%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail small" src="https://user-images.githubusercontent.com/44257305/70061219-da913200-161e-11ea-946f-883d085ce3dd.png" alt="Js-数组方法详解">
+                    <img class="thumbnail small" src="https://user-images.githubusercontent.com/44257305/70061219-da913200-161e-11ea-946f-883d085ce3dd.png" alt="Js - 数组方法详解">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-03T12:54:00.000Z">2019-12-03</time></div>
-                    <a href="/2019/12/03/JS%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Js-数组方法详解</a>
+                    <a href="/2019/12/03/JS%20-%20%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Js - 数组方法详解</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/12/02/%E6%89%8B%E6%9C%BA%E5%8D%A1%EF%BC%9F%E6%B2%A1%E6%9C%89%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4%E4%BA%86%EF%BC%9F%E8%AF%95%E8%AF%95%E6%88%91%E8%BF%99%E4%B8%AA%E5%B7%A5%E5%85%B7%EF%BC%81/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail small" src="https://user-images.githubusercontent.com/44257305/69972569-d0a6fa80-155c-11ea-908a-88af1176e1e0.jpg" alt="手机卡？没有存储空间了？试试这个工具！">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-02T13:44:00.000Z">2019-12-02</time></div>
-                    <a href="/2019/12/02/%E6%89%8B%E6%9C%BA%E5%8D%A1%EF%BC%9F%E6%B2%A1%E6%9C%89%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4%E4%BA%86%EF%BC%9F%E8%AF%95%E8%AF%95%E6%88%91%E8%BF%99%E4%B8%AA%E5%B7%A5%E5%85%B7%EF%BC%81/" class="title has-link-black-ter is-size-6 has-text-weight-normal">手机卡？没有存储空间了？试试这个工具！</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E5%B0%8F%E5%B7%A5%E5%85%B7-Android/">小工具/Android</a>
                     </p>
                 </div>
             </div>
@@ -973,6 +972,17 @@
             归档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2020/06/">
@@ -1013,7 +1023,7 @@
                     <span class="level-item">十一月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -1132,7 +1142,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.png" alt="Vue-组件间的六种通信方式" height="28">
+                    <img src="/images/logo.png" alt="Css - 利用伪元素的 content 属性实现 tooltip 插件的功能" height="28">
                 
                 </a>
                 <p class="is-size-7">

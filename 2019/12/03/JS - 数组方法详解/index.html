@@ -8,24 +8,24 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>手机卡？没有存储空间了？试试这个工具！ - 爆开的个人博客</title>
+<title>Js - 数组方法详解 - 爆开的个人博客</title>
 
 
-    <meta name="description" content="最强安卓平台第三方文件管理器没得说，先上干货:  正版: ES File Explorer  (提取码: yyvi)">
+    <meta name="description" content="这里介绍 JS 在开发过程中使用到的最频繁的几个数组原型上的方法:_注意事项_：  以下方法后面的 Y 和 N 分别表示该方法使用否会更改原数组； 以下示例代码写法部分为ES6 以下示例代码能邪门就邪门，因为真正开发过程中的逻辑或数据不是简简单单的1、2、3、4！！！要想浏览简单的介绍及应用可以去看官方文档">
 <meta property="og:type" content="article">
-<meta property="og:title" content="手机卡？没有存储空间了？试试这个工具！">
-<meta property="og:url" content="http://yoursite.com/2019/12/02/%E6%89%8B%E6%9C%BA%E5%8D%A1%EF%BC%9F%E6%B2%A1%E6%9C%89%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4%E4%BA%86%EF%BC%9F%E8%AF%95%E8%AF%95%E6%88%91%E8%BF%99%E4%B8%AA%E5%B7%A5%E5%85%B7%EF%BC%81/index.html">
+<meta property="og:title" content="Js - 数组方法详解">
+<meta property="og:url" content="http://yoursite.com/2019/12/03/JS%20-%20%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3/index.html">
 <meta property="og:site_name" content="爆开的个人博客">
-<meta property="og:description" content="最强安卓平台第三方文件管理器没得说，先上干货:  正版: ES File Explorer  (提取码: yyvi)">
+<meta property="og:description" content="这里介绍 JS 在开发过程中使用到的最频繁的几个数组原型上的方法:_注意事项_：  以下方法后面的 Y 和 N 分别表示该方法使用否会更改原数组； 以下示例代码写法部分为ES6 以下示例代码能邪门就邪门，因为真正开发过程中的逻辑或数据不是简简单单的1、2、3、4！！！要想浏览简单的介绍及应用可以去看官方文档">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://user-images.githubusercontent.com/44257305/69972569-d0a6fa80-155c-11ea-908a-88af1176e1e0.jpg">
-<meta property="article:published_time" content="2019-12-02T13:44:00.000Z">
-<meta property="article:modified_time" content="2020-10-20T09:03:08.984Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/44257305/70061219-da913200-161e-11ea-946f-883d085ce3dd.png">
+<meta property="article:published_time" content="2019-12-03T12:54:00.000Z">
+<meta property="article:modified_time" content="2020-10-22T09:47:50.941Z">
 <meta property="article:author" content="Glk">
-<meta property="article:tag" content="工具">
-<meta property="article:tag" content="Android">
+<meta property="article:tag" content="数组&#x2F;数组方法">
+<meta property="article:tag" content="JS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://user-images.githubusercontent.com/44257305/69972569-d0a6fa80-155c-11ea-908a-88af1176e1e0.jpg">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/44257305/70061219-da913200-161e-11ea-946f-883d085ce3dd.png">
 
 
 
@@ -84,7 +84,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.png" alt="手机卡？没有存储空间了？试试这个工具！" height="28">
+                <img src="/images/logo.png" alt="Js - 数组方法详解" height="28">
             
             </a>
         </div>
@@ -138,7 +138,7 @@
     
     <div class="card-image">
         <span  class="image is-7by1">
-            <img class="thumbnail" src="https://user-images.githubusercontent.com/44257305/69972569-d0a6fa80-155c-11ea-908a-88af1176e1e0.jpg" alt="手机卡？没有存储空间了？试试这个工具！">
+            <img class="thumbnail" src="https://user-images.githubusercontent.com/44257305/70061219-da913200-161e-11ea-946f-883d085ce3dd.png" alt="Js - 数组方法详解">
         </span>
     </div>
     
@@ -146,17 +146,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-02T13:44:00.000Z">2019-12-02</time>
+                <time class="level-item has-text-grey" datetime="2019-12-03T12:54:00.000Z">2019-12-03</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%E5%B0%8F%E5%B7%A5%E5%85%B7-Android/">小工具/Android</a>
+                <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    4 分钟 读完 (大约 531 个字)
+                    13 分钟 读完 (大约 1933 个字)
                 </span>
                 
                 
@@ -165,59 +165,95 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                手机卡？没有存储空间了？试试这个工具！
+                Js - 数组方法详解
             
         </h1>
         <div class="content">
-            <html><head></head><body><h2 id="最强安卓平台第三方文件管理器"><a href="#最强安卓平台第三方文件管理器" class="headerlink" title="最强安卓平台第三方文件管理器"></a>最强安卓平台第三方文件管理器</h2><p>没得说，先上干货:</p>
+            <html><head></head><body><h3 id="这里介绍-JS-在开发过程中使用到的最频繁的几个数组原型上的方法"><a href="#这里介绍-JS-在开发过程中使用到的最频繁的几个数组原型上的方法" class="headerlink" title="这里介绍 JS 在开发过程中使用到的最频繁的几个数组原型上的方法:"></a>这里介绍 JS 在开发过程中使用到的最频繁的几个数组原型上的方法:</h3><p>_<strong>注意事项</strong>_：</p>
 <ul>
-<li><p>正版: <a href="https://pan.baidu.com/s/1pPiV4-wIBDbAtINfsTt7lg" target="_blank" rel="noopener">ES File Explorer</a>  (提取码: yyvi)</p>
+<li>以下方法后面的 Y 和 N 分别表示该方法使用否会更改原数组；</li>
+<li>以下示例代码写法部分为ES6</li>
+<li>以下示例代码能邪门就邪门，因为真正开发过程中的逻辑或数据不是简简单单的1、2、3、4！！！要想浏览简单的介绍及应用可以去看官方文档</li>
+</ul>
+<hr>
 <a id="more"></a>
+
+
+<p><strong>1.   push(…arg)</strong>【Y】</p>
 <blockquote>
-<p>这款正在用，有几个小问题：【广告多】【扫描慢了一点】【部分功能需要权限或VIP】</p>
+<p><strong>》作用:</strong>    接收任意数量的参数，将它们逐个添加到数组的末尾处<br><strong>》返回值:</strong>   返回更改后数组的 length 值</p>
+</blockquote>
+  <figure class="highlight javascript hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">let</span> newLength = arr.push(<span class="hljs-literal">true</span>, [<span class="hljs-number">5</span>,<span class="hljs-number">6</span>], {<span class="hljs-attr">methodName</span>: <span class="hljs-string">'push'</span>, <span class="hljs-attr">changeSourceArr</span>: <span class="hljs-literal">true</span>  }, <span class="hljs-string">'PUSH'</span>, <span class="hljs-built_in">Symbol</span>(<span class="hljs-string">'push'</span>))</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'newLength:'</span>, newLength) <span class="hljs-comment">// 7 (type: 'number')</span></span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<p><strong>2.   pop()</strong>【Y】</p>
+<blockquote>
+<p><strong>》作用:</strong>    移除数组末尾最后一项，减少数组的 length 值<br>    <strong>》返回值:</strong>   返回被移除的项</p>
+</blockquote>
+<figure class="highlight js hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> arr = [<span class="hljs-string">'item1'</span>, <span class="hljs-literal">true</span>, {<span class="hljs-string">'name'</span>: <span class="hljs-string">'glk'</span>}]  </span><br><span class="line">   </span><br><span class="line"><span class="hljs-keyword">let</span> deleItem = arr.pop()</span><br><span class="line">   </span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'arr:'</span>, arr) <span class="hljs-comment">// ['item1', true] (type: 'array')</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'deleItem'</span>, deleItem) <span class="hljs-comment">// {name: "glk"} (type: 'object')</span></span><br></pre></td></tr></tbody></table></figure>
+
+
+<p><strong>3.   shift()</strong>【Y】</p>
+<blockquote>
+<p><strong>》作用:</strong>    移除数组第一项，减少数组的 length 值<br>    <strong>》返回值:</strong>   返回被移除的项，数组为空则返回 undefined </p>
+</blockquote>
+<figure class="highlight js hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> arr = [<span class="hljs-string">'item1'</span>, <span class="hljs-literal">true</span>, {<span class="hljs-string">'name'</span>: <span class="hljs-string">'glk'</span>}]  </span><br><span class="line">   </span><br><span class="line"><span class="hljs-keyword">let</span> deleItem = arr.shift()</span><br><span class="line">   </span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'arr:'</span>, arr) <span class="hljs-comment">// [true, {'name': 'glk'}] (type: 'array')</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'deleItem'</span>, deleItem) <span class="hljs-comment">// 'item1' (type: 'object')</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>4.   unshift(…arg)</strong>【Y】</p>
+<blockquote>
+<p><strong>》作用:</strong>    接受任意数量的参数，将参数逐个添加到原数组开头处，并<br>    <strong>》返回值:</strong>   返回更改后数组的 length 值</p>
+</blockquote>
+<figure class="highlight js hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> arr = [<span class="hljs-string">'item1'</span>, <span class="hljs-literal">true</span>]  </span><br><span class="line">   </span><br><span class="line"><span class="hljs-keyword">let</span> newLength = arr.unshift(<span class="hljs-string">'newItem'</span>, <span class="hljs-literal">false</span>)</span><br><span class="line">   </span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'arr:'</span>, arr) <span class="hljs-comment">// ['newItem', false, 'item1', true](type: 'array')</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'newLength'</span>, deleItem) <span class="hljs-comment">// 4 (type: 'number')</span></span><br></pre></td></tr></tbody></table></figure>
+
+
+<p><strong>5.   slice(start[, end(Number)])</strong>【N】</p>
+<blockquote>
+<p><strong>》作用:</strong>    接受两个参数，根据这两个参数从原数组中截取选定的元素<br><strong>》返回值:</strong>   返回一个新的数组，包含从 start 到 end （不包括该元素）的 arrayObject 中的元素。<br><strong>》参数:</strong><br>    1. start: <em>可选。规定从何处开始选取。如果是负数，那么它规定从数组尾部开始算起的位置。也就是说，-1 指最后一个元素，-2 指倒数第二个元素，以此类推。</em><br>    2. end: <em>可选。规定从何处结束选取。该参数是数组片断结束处的数组下标。如果没有指定该参数，那么切分的数组包含从 start 到数组结束的所有元素。如果这个参数是负数，那么它规定的是从数组尾部开始算起的元素。</em></p>
+</blockquote>
+<p><strong>以上参数解释是官方，可能在用负数的时候有点乱，这里只要记住一句话：</strong><br> 这个方法是截取数组的，截取的的方向一直都是【从左到右】，正负值只是决定了在 start 或 end 在对应值的时候是从左边还是右边开始算</p>
+<figure class="highlight js hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> arr = [<span class="hljs-string">'item1'</span>, <span class="hljs-string">'item2'</span>, <span class="hljs-string">'item3'</span>, <span class="hljs-string">'item4'</span>]</span><br><span class="line">   </span><br><span class="line"><span class="hljs-keyword">let</span> newArr1 = arr.slice(<span class="hljs-number">1</span>) <span class="hljs-comment">// ['item2', 'item3', 'item4']</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">let</span> newArr2 = arr.slice(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>) <span class="hljs-comment">// ['item2', 'item3']</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">let</span> newArr3 = arr.slice(<span class="hljs-number">-2</span>) <span class="hljs-comment">// ['item3', 'item4'] </span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">let</span> newArr4 = arr.slice(<span class="hljs-number">-2</span>, <span class="hljs-number">-1</span>) <span class="hljs-comment">// ['item3']</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>6.   splice(start[, end(Number)])</strong>【Y】</p>
+<blockquote>
+<p><strong>》作用:</strong>    向数组中添加，或从数组删除，或替换数组中的元素，然后<br><strong>》返回值:</strong>   返回被删除/替换的元素<br><strong>》参数:</strong><br>    1. start: <em>可选。规定从何处开始选取。如果是负数，那么它规定从数组尾部开始算起的位置。也就是说，-1 指最后一个元素，-2 指倒数第二个元素，以此类推。</em><br>    2. end: <em>可选。规定从何处结束选取。该参数是数组片断结束处的数组下标。如果没有指定该参数，那么切分的数组包含从 start 到数组结束的所有元素。如果这个参数是负数，那么它规定的是从数组尾部开始算起的元素。</em></p>
+</blockquote>
+<figure class="highlight js hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 1) 增加数组项</span></span><br><span class="line">   <span class="hljs-keyword">let</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]</span><br><span class="line">   </span><br><span class="line">   <span class="hljs-keyword">let</span> retVal = arr.splice(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-string">'加入1'</span>)</span><br><span class="line">   </span><br><span class="line">   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'arr:'</span>, arr) <span class="hljs-comment">// [1, '加入1', 2, 3, 4]</span></span><br><span class="line">   </span><br><span class="line">   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'retVal:'</span>, retVal) <span class="hljs-comment">// 删除数目为 0，所以返回 []</span></span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line"><span class="hljs-comment">// 2) 只删除数组项</span></span><br><span class="line">  <span class="hljs-keyword">let</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]</span><br><span class="line">   </span><br><span class="line">   <span class="hljs-keyword">let</span> retVal = arr.splice(<span class="hljs-number">0</span>, <span class="hljs-number">2</span>) </span><br><span class="line">   </span><br><span class="line">   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'arr:'</span>, arr) <span class="hljs-comment">// [3, 4]</span></span><br><span class="line">	</span><br><span class="line">   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'retVal:'</span>, retVal) <span class="hljs-comment">// [1, 2]</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 3) 删除数组项并整体替换</span></span><br><span class="line">   <span class="hljs-keyword">let</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]</span><br><span class="line">   </span><br><span class="line">   <span class="hljs-keyword">let</span> retVal = arr.splice(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-string">'replace'</span>)</span><br><span class="line">   </span><br><span class="line">   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'arr:'</span>, arr) <span class="hljs-comment">// [1,'replace', 4]</span></span><br><span class="line">	</span><br><span class="line">   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'retVal:'</span>, retVal) <span class="hljs-comment">// [2, 3]</span></span><br><span class="line">   </span><br><span class="line"><span class="hljs-comment">// 4) 删除数组项并对应替换</span></span><br><span class="line">   <span class="hljs-keyword">let</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]</span><br><span class="line">   </span><br><span class="line">   <span class="hljs-keyword">let</span> retVal = arr.splice(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-string">'replace2'</span>, <span class="hljs-string">'replace3'</span>)</span><br><span class="line">   </span><br><span class="line">   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'arr:'</span>, arr) <span class="hljs-comment">// [1,'replace2', 'replace3', 4]</span></span><br><span class="line">	</span><br><span class="line">   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'retVal:'</span>, retVal) <span class="hljs-comment">// [2, 3]</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>7.   indexOf(item[, start(Number)])</strong>【N】</p>
+<blockquote>
+<p><strong>》作用:</strong>    该方法将从头到尾地检索数组。看它是否含有对应的 item 。开始检索的位置在数组 start 处或数组的开头（没有指定 start 参数时，默认检索索引为0）。如果找到一个 item，则返回 item 的<strong>第一次</strong>出现的位置。<br>    <strong>》返回值:</strong>   返回数组中 item 元素【从左往右第一次出现的位置】。没有返回 -1</p>
+</blockquote>
+<figure class="highlight js hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> arr = [<span class="hljs-string">'鸡'</span>, <span class="hljs-string">'翅'</span>, <span class="hljs-string">'包'</span>, <span class="hljs-string">'饭'</span>, <span class="hljs-string">'只'</span>, <span class="hljs-string">'吃'</span>, <span class="hljs-string">'到'</span>, <span class="hljs-string">'了'</span>, <span class="hljs-string">'饭'</span>]  </span><br><span class="line">   </span><br><span class="line">arr.indexOf(<span class="hljs-string">'饭'</span>) <span class="hljs-comment">// 3</span></span><br><span class="line"></span><br><span class="line">arr.indexOf(<span class="hljs-string">'饭'</span>, <span class="hljs-number">3</span>) <span class="hljs-comment">// 3</span></span><br><span class="line"></span><br><span class="line">arr.indexOf(<span class="hljs-string">'饭'</span>, <span class="hljs-number">4</span>) <span class="hljs-comment">// 8</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>8.   lastIndexOf(item[, start(Number)])</strong>【N】</p>
+<blockquote>
+<p><strong>》作用:</strong>    该方法将从尾到头地检索数组中指定元素 item。开始检索的位置在数组的 start 处或数组的结尾（没有指定 start 参数时，默认索引为 arr.length - 1）。如果找到一个 item，则返回 item 从尾向前检索第一个次出现的项在数组中的索引。<br><strong>》返回值:</strong>   返回数组中 item 元素【从右往左检索第一次出现的位置】。没有返回 -1<br><strong>》注意:</strong> 这里最后返回的索引值还是该项在数组中从左往右的索引值</p>
+</blockquote>
+<figure class="highlight js hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> arr = [<span class="hljs-string">'鸡'</span>, <span class="hljs-string">'翅'</span>, <span class="hljs-string">'包'</span>, <span class="hljs-string">'饭'</span>, <span class="hljs-string">'只'</span>, <span class="hljs-string">'吃'</span>, <span class="hljs-string">'到'</span>, <span class="hljs-string">'了'</span>, <span class="hljs-string">'饭'</span>]  </span><br><span class="line">   </span><br><span class="line">arr.lastIndexOf(<span class="hljs-string">'饭'</span>) <span class="hljs-comment">// 8</span></span><br><span class="line"></span><br><span class="line">arr.lastIndexOf(<span class="hljs-string">'饭'</span>, <span class="hljs-number">3</span>) <span class="hljs-comment">// 3</span></span><br><span class="line"></span><br><span class="line">arr.lastIndexOf(<span class="hljs-string">'饭'</span>, <span class="hljs-number">4</span>) <span class="hljs-comment">// 3</span></span><br><span class="line"></span><br><span class="line">arr.lastIndexOf(<span class="hljs-string">'饭'</span>, <span class="hljs-number">2</span>) <span class="hljs-comment">// -1</span></span><br></pre></td></tr></tbody></table></figure>
+
+
+<p><strong>9.   Array.forEach(callback)</strong>【N】</p>
+<blockquote>
+<p><strong>》作用:</strong>    ES5新增的方法，用来遍历数组。<br><strong>》返回值:</strong>   没有返回值！<br><strong>》回调参数:</strong> 默认有三个参数，分别为value(遍历到的数组的数据)，index(对应的索引)，self(数组自身)。</p>
 </blockquote>
 <blockquote>
-<p>但总的来说还是很不错的。上初中的时候(13-14年吧)用的第一款第三方文件管理器就是它，手机依稀记得是联想的Al8t吧，就是那种充话费送的手机，那时候3G刚出来，什么沃3G、动感地带SIM卡、一个月5M流量多的用不掉、一张身份证随便办几张卡，用欠费随便扔，从不注销的的情况比比皆是，想想是真的爽！ 那个时候这款工具功能就很齐全。不知道为什么后来给忘记了，惭愧，今天补上以表歉意。。。</p>
+<p><strong><em>对于该方法到底能不能改变原数组(或改变原数组中某项的值)，有以下建议:</em></strong><br>1）操作的项是引用类型可以直接去重新赋值去改变原数组（需慎重）；<br>2）操作的项是基本类型需要找到这项值来的根源去赋值，比如在 forEach 回调中可以通过 self[index] = newVal, 不可以直接 item = newVal 去直接重新赋值，下面有示例</p>
 </blockquote>
-</li>
-</ul>
-<ul>
-<li>破解版: <a href="https://pan.baidu.com/s/126EltLUpTAQjZ3tofTyXCg" target="_blank" rel="noopener">ES File Explorer</a> (提取码: 1wo2)<blockquote>
-<p>这个没有试过，应该是挺不错的。去广告解锁高级版 + Google Play 版,具体<br>  更改如下：</p>
+<figure class="highlight js hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 1) 基本的遍历</span></span><br><span class="line"><span class="hljs-keyword">let</span> arr = [<span class="hljs-string">'鸡'</span>, <span class="hljs-string">'翅'</span>, <span class="hljs-string">'包'</span>, <span class="hljs-string">'饭'</span>, <span class="hljs-string">'只'</span>, <span class="hljs-string">'吃'</span>, <span class="hljs-string">'到'</span>, <span class="hljs-string">'了'</span>, <span class="hljs-string">'饭'</span>]  </span><br><span class="line">    </span><br><span class="line">arr.forEach(<span class="hljs-function">(<span class="hljs-params">item, index, self</span>) =></span> {</span><br><span class="line">  <span class="hljs-built_in">console</span>.log(item, index, self) </span><br><span class="line">})	</span><br><span class="line"></span><br><span class="line"> <span class="hljs-comment">/* 结果如下:</span></span><br><span class="line"><span class="hljs-comment">   鸡 0 ["鸡", "翅", "包", "饭", "只", "吃", "到", "了", "饭"]</span></span><br><span class="line"><span class="hljs-comment">   翅 1 ["鸡", "翅", "包", "饭", "只", "吃", "到", "了", "饭"]</span></span><br><span class="line"><span class="hljs-comment">   包 2 ["鸡", "翅", "包", "饭", "只", "吃", "到", "了", "饭"]</span></span><br><span class="line"><span class="hljs-comment">   饭 3 ["鸡", "翅", "包", "饭", "只", "吃", "到", "了", "饭"]</span></span><br><span class="line"><span class="hljs-comment">   只 4 ["鸡", "翅", "包", "饭", "只", "吃", "到", "了", "饭"]</span></span><br><span class="line"><span class="hljs-comment">   吃 5 ["鸡", "翅", "包", "饭", "只", "吃", "到", "了", "饭"]</span></span><br><span class="line"><span class="hljs-comment">   到 6 ["鸡", "翅", "包", "饭", "只", "吃", "到", "了", "饭"]</span></span><br><span class="line"><span class="hljs-comment">   了 7 ["鸡", "翅", "包", "饭", "只", "吃", "到", "了", "饭"]</span></span><br><span class="line"><span class="hljs-comment">   饭 8 ["鸡", "翅", "包", "饭", "只", "吃", "到", "了", "饭"]</span></span><br><span class="line"><span class="hljs-comment">*/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 2) 结合参数间接改变数组</span></span><br><span class="line"><span class="hljs-keyword">let</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]</span><br><span class="line"></span><br><span class="line">arr.forEach(<span class="hljs-function">(<span class="hljs-params">i, idx, self</span>) =></span> {</span><br><span class="line">   self[idx] = i + <span class="hljs-number">1</span></span><br><span class="line">})</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'arr'</span>, arr) <span class="hljs-comment">// [2, 3, 4, 5]</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>10.   Array.map(callback)</strong>【N】</p>
+<blockquote>
+<p><strong>》作用:</strong>  功能同 forEach() ,用来遍历数组。<br><strong>》返回值:</strong>   map的回调函数会将执行结果返回，最后map将所有回调函数的返回值组成新数组返回。<br><strong>》回调参数:</strong> 默认有三个参数，同 forEach 的参数</p>
 </blockquote>
-<ul>
-<li>优化图形和清理资源，实现快速加载；</li>
-<li>广告已删除；</li>
-<li>赞助商横幅布局已删除；</li>
-<li>飞溅屏幕已删除；</li>
-<li>删除强制自动快捷方式；</li>
-<li>SD卡上没有英国媒体报道文件夹；</li>
-<li>已禁用/已删除不需要的权限+接收方和服务；</li>
-<li>平板电脑模式下的所有广告横幅广告已删；</li>
-<li>删除原生 admob + mopub 广告横幅布局；</li>
-<li>从菜单中删除了 Messagebox + 社交按钮；</li>
-<li>删除退出应用的反馈；</li>
-<li>驱动云工作；</li>
-<li>实时监控解锁；</li>
-<li>主题选择器解锁；</li>
-<li>SMB 2.0 解锁；</li>
-<li>系统隐藏文件解锁；</li>
-<li>礼物图标从 Es Swipe 中删除；</li>
-<li>Google Analytics / Crashlytics 已停用。</li>
-</ul>
-</li>
-</ul>
-<h3 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h3><blockquote>
-<p>从存储空间不足只剩 48M 到 剩余内存 8.07G，哇！ 没得说，赶紧试试吧。</p>
-</blockquote>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
+<figure class="highlight js hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 要求，拿到数组中每一项的 name 值存入新的数组中</span></span><br><span class="line"><span class="hljs-keyword">let</span> arr = [</span><br><span class="line">  {</span><br><span class="line">      name: <span class="hljs-string">'吕布'</span>,</span><br><span class="line">      age: <span class="hljs-number">100</span> </span><br><span class="line">  },</span><br><span class="line">  {</span><br><span class="line">      name: <span class="hljs-string">'貂蝉'</span>,</span><br><span class="line">      age: <span class="hljs-number">16</span></span><br><span class="line">  },	</span><br><span class="line">  {</span><br><span class="line">      name: <span class="hljs-string">'小乔'</span>,</span><br><span class="line">      age: <span class="hljs-number">16</span></span><br><span class="line">  },</span><br><span class="line">  {</span><br><span class="line">      name: <span class="hljs-string">'周瑜'</span>,</span><br><span class="line">      age: <span class="hljs-number">102</span></span><br><span class="line">  }	</span><br><span class="line">]  </span><br><span class="line">    </span><br><span class="line"><span class="hljs-keyword">let</span> nameList = arr.map(<span class="hljs-function"><span class="hljs-params">item</span> =></span> {</span><br><span class="line">  <span class="hljs-keyword">return</span> item.name</span><br><span class="line">})</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'nameList:'</span>, nameList) <span class="hljs-comment">// ['吕布', '貂蝉', '小乔', '周瑜']</span></span><br><span class="line"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'arr:'</span>, arr) <span class="hljs-comment">// 原数组不变</span></span><br></pre></td></tr></tbody></table></figure><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
         </div>
         
         <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Android/" rel="tag">Android</a>, <a class="has-link-grey -link" href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag">工具</a>
+                    <a class="has-link-grey -link" href="/tags/JS/" rel="tag">JS</a>, <a class="has-link-grey -link" href="/tags/%E6%95%B0%E7%BB%84-%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/" rel="tag">数组/数组方法</a>
                 </div>
             </div>
         </div>
@@ -264,16 +300,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/12/03/JS%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/12/06/Vue%20-%20%E7%BB%84%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%85%AD%E7%A7%8D%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Js-数组方法详解</span>
+                <span class="level-item">Vue - 组件间的六种通信方式</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/11/15/%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E8%B6%85%E5%A5%BD%E7%94%A8%E7%9A%84%E6%8F%92%E4%BB%B6%E3%80%81%E6%89%A9%E5%B1%95%E7%A8%8B%E5%BA%8F/">
-                <span class="level-item">谷歌浏览器超好用的扩展程序</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/12/02/Android%20-%20%E6%89%8B%E6%9C%BA%E5%8D%A1%EF%BC%9F%E6%B2%A1%E6%9C%89%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4%E4%BA%86%EF%BC%9F%E8%AF%95%E8%AF%95%E6%88%91%E8%BF%99%E4%B8%AA%E5%B7%A5%E5%85%B7%EF%BC%81/">
+                <span class="level-item">Android - 手机卡？没有存储空间了？试试这个工具！</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -556,16 +592,16 @@
         
         <article class="media">
             
-            <a href="/2020/06/02/PS%E2%80%94%E2%80%94%E5%9B%BE%E7%89%87%E7%9A%84%E8%A3%81%E5%88%87/" class="media-left">
+            <a href="/2020/10/20/Postman%20-%20%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail small" src="/images/thumbnail.svg" alt="PS——图片的裁切">
+                    <img class="thumbnail small" src="https://user-images.githubusercontent.com/44257305/96853854-6c9b6680-148d-11eb-9e88-19a394ba5d27.jpg" alt="Postman - 进阶使用">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-02T02:36:28.000Z">2020-06-02</time></div>
-                    <a href="/2020/06/02/PS%E2%80%94%E2%80%94%E5%9B%BE%E7%89%87%E7%9A%84%E8%A3%81%E5%88%87/" class="title has-link-black-ter is-size-6 has-text-weight-normal">PS——图片的裁切</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-20T09:31:00.000Z">2020-10-20</time></div>
+                    <a href="/2020/10/20/Postman%20-%20%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Postman - 进阶使用</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -575,16 +611,35 @@
         
         <article class="media">
             
-            <a href="/2020/02/06/Css-%E5%88%A9%E7%94%A8%E4%BC%AA%E5%85%83%E7%B4%A0%E7%9A%84-content-%E5%B1%9E%E6%80%A7%E5%AE%9E%E7%8E%B0-tooltip-%E6%8F%92%E4%BB%B6%E7%9A%84%E5%8A%9F%E8%83%BD/" class="media-left">
+            <a href="/2020/06/02/PS-%E5%9B%BE%E7%89%87%E7%9A%84%E8%A3%81%E5%88%87/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail small" src="/images/thumbnail.svg" alt="Css-利用伪元素的 content 属性实现 tooltip 插件的功能">
+                    <img class="thumbnail small" src="https://user-images.githubusercontent.com/44257305/96855844-dddc1900-148f-11eb-9146-038ff05c777c.jpg" alt="PS - 图片的裁切">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-02T02:36:28.000Z">2020-06-02</time></div>
+                    <a href="/2020/06/02/PS-%E5%9B%BE%E7%89%87%E7%9A%84%E8%A3%81%E5%88%87/" class="title has-link-black-ter is-size-6 has-text-weight-normal">PS - 图片的裁切</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/06/Css%20-%20%E5%88%A9%E7%94%A8%E4%BC%AA%E5%85%83%E7%B4%A0%E7%9A%84-content-%E5%B1%9E%E6%80%A7%E5%AE%9E%E7%8E%B0-tooltip-%E6%8F%92%E4%BB%B6%E7%9A%84%E5%8A%9F%E8%83%BD/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail small" src="https://user-images.githubusercontent.com/44257305/96856046-1976e300-1490-11eb-8441-4a8c5409f326.jpg" alt="Css - 利用伪元素的 content 属性实现 tooltip 插件的功能">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-06T04:07:00.000Z">2020-02-06</time></div>
-                    <a href="/2020/02/06/Css-%E5%88%A9%E7%94%A8%E4%BC%AA%E5%85%83%E7%B4%A0%E7%9A%84-content-%E5%B1%9E%E6%80%A7%E5%AE%9E%E7%8E%B0-tooltip-%E6%8F%92%E4%BB%B6%E7%9A%84%E5%8A%9F%E8%83%BD/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Css-利用伪元素的 content 属性实现 tooltip 插件的功能</a>
+                    <a href="/2020/02/06/Css%20-%20%E5%88%A9%E7%94%A8%E4%BC%AA%E5%85%83%E7%B4%A0%E7%9A%84-content-%E5%B1%9E%E6%80%A7%E5%AE%9E%E7%8E%B0-tooltip-%E6%8F%92%E4%BB%B6%E7%9A%84%E5%8A%9F%E8%83%BD/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Css - 利用伪元素的 content 属性实现 tooltip 插件的功能</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91-CSS/">前端开发/CSS</a>
                     </p>
@@ -594,16 +649,16 @@
         
         <article class="media">
             
-            <a href="/2019/12/06/Vue%E7%BB%84%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%85%AD%E7%A7%8D%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F/" class="media-left">
+            <a href="/2019/12/06/Vue%20-%20%E7%BB%84%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%85%AD%E7%A7%8D%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail small" src="https://user-images.githubusercontent.com/44257305/70319109-7a87cf00-185c-11ea-905c-fc7fae2f22a9.jpg" alt="Vue-组件间的六种通信方式">
+                    <img class="thumbnail small" src="https://user-images.githubusercontent.com/44257305/70319109-7a87cf00-185c-11ea-905c-fc7fae2f22a9.jpg" alt="Vue - 组件间的六种通信方式">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-06T10:57:00.000Z">2019-12-06</time></div>
-                    <a href="/2019/12/06/Vue%E7%BB%84%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%85%AD%E7%A7%8D%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Vue-组件间的六种通信方式</a>
+                    <a href="/2019/12/06/Vue%20-%20%E7%BB%84%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%85%AD%E7%A7%8D%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Vue - 组件间的六种通信方式</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF-Vue/">前端/Vue</a>
                     </p>
@@ -613,37 +668,18 @@
         
         <article class="media">
             
-            <a href="/2019/12/03/JS%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3/" class="media-left">
+            <a href="/2019/12/03/JS%20-%20%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail small" src="https://user-images.githubusercontent.com/44257305/70061219-da913200-161e-11ea-946f-883d085ce3dd.png" alt="Js-数组方法详解">
+                    <img class="thumbnail small" src="https://user-images.githubusercontent.com/44257305/70061219-da913200-161e-11ea-946f-883d085ce3dd.png" alt="Js - 数组方法详解">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-03T12:54:00.000Z">2019-12-03</time></div>
-                    <a href="/2019/12/03/JS%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Js-数组方法详解</a>
+                    <a href="/2019/12/03/JS%20-%20%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Js - 数组方法详解</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/12/02/%E6%89%8B%E6%9C%BA%E5%8D%A1%EF%BC%9F%E6%B2%A1%E6%9C%89%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4%E4%BA%86%EF%BC%9F%E8%AF%95%E8%AF%95%E6%88%91%E8%BF%99%E4%B8%AA%E5%B7%A5%E5%85%B7%EF%BC%81/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail small" src="https://user-images.githubusercontent.com/44257305/69972569-d0a6fa80-155c-11ea-908a-88af1176e1e0.jpg" alt="手机卡？没有存储空间了？试试这个工具！">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-02T13:44:00.000Z">2019-12-02</time></div>
-                    <a href="/2019/12/02/%E6%89%8B%E6%9C%BA%E5%8D%A1%EF%BC%9F%E6%B2%A1%E6%9C%89%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4%E4%BA%86%EF%BC%9F%E8%AF%95%E8%AF%95%E6%88%91%E8%BF%99%E4%B8%AA%E5%B7%A5%E5%85%B7%EF%BC%81/" class="title has-link-black-ter is-size-6 has-text-weight-normal">手机卡？没有存储空间了？试试这个工具！</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E5%B0%8F%E5%B7%A5%E5%85%B7-Android/">小工具/Android</a>
                     </p>
                 </div>
             </div>
@@ -659,6 +695,17 @@
             归档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2020/06/">
@@ -699,7 +746,7 @@
                     <span class="level-item">十一月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -887,16 +934,16 @@
         
         <article class="media">
             
-            <a href="/2020/06/02/PS%E2%80%94%E2%80%94%E5%9B%BE%E7%89%87%E7%9A%84%E8%A3%81%E5%88%87/" class="media-left">
+            <a href="/2020/10/20/Postman%20-%20%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail small" src="/images/thumbnail.svg" alt="PS——图片的裁切">
+                    <img class="thumbnail small" src="https://user-images.githubusercontent.com/44257305/96853854-6c9b6680-148d-11eb-9e88-19a394ba5d27.jpg" alt="Postman - 进阶使用">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-02T02:36:28.000Z">2020-06-02</time></div>
-                    <a href="/2020/06/02/PS%E2%80%94%E2%80%94%E5%9B%BE%E7%89%87%E7%9A%84%E8%A3%81%E5%88%87/" class="title has-link-black-ter is-size-6 has-text-weight-normal">PS——图片的裁切</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-20T09:31:00.000Z">2020-10-20</time></div>
+                    <a href="/2020/10/20/Postman%20-%20%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Postman - 进阶使用</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -906,16 +953,35 @@
         
         <article class="media">
             
-            <a href="/2020/02/06/Css-%E5%88%A9%E7%94%A8%E4%BC%AA%E5%85%83%E7%B4%A0%E7%9A%84-content-%E5%B1%9E%E6%80%A7%E5%AE%9E%E7%8E%B0-tooltip-%E6%8F%92%E4%BB%B6%E7%9A%84%E5%8A%9F%E8%83%BD/" class="media-left">
+            <a href="/2020/06/02/PS-%E5%9B%BE%E7%89%87%E7%9A%84%E8%A3%81%E5%88%87/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail small" src="/images/thumbnail.svg" alt="Css-利用伪元素的 content 属性实现 tooltip 插件的功能">
+                    <img class="thumbnail small" src="https://user-images.githubusercontent.com/44257305/96855844-dddc1900-148f-11eb-9146-038ff05c777c.jpg" alt="PS - 图片的裁切">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-02T02:36:28.000Z">2020-06-02</time></div>
+                    <a href="/2020/06/02/PS-%E5%9B%BE%E7%89%87%E7%9A%84%E8%A3%81%E5%88%87/" class="title has-link-black-ter is-size-6 has-text-weight-normal">PS - 图片的裁切</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/06/Css%20-%20%E5%88%A9%E7%94%A8%E4%BC%AA%E5%85%83%E7%B4%A0%E7%9A%84-content-%E5%B1%9E%E6%80%A7%E5%AE%9E%E7%8E%B0-tooltip-%E6%8F%92%E4%BB%B6%E7%9A%84%E5%8A%9F%E8%83%BD/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail small" src="https://user-images.githubusercontent.com/44257305/96856046-1976e300-1490-11eb-8441-4a8c5409f326.jpg" alt="Css - 利用伪元素的 content 属性实现 tooltip 插件的功能">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-06T04:07:00.000Z">2020-02-06</time></div>
-                    <a href="/2020/02/06/Css-%E5%88%A9%E7%94%A8%E4%BC%AA%E5%85%83%E7%B4%A0%E7%9A%84-content-%E5%B1%9E%E6%80%A7%E5%AE%9E%E7%8E%B0-tooltip-%E6%8F%92%E4%BB%B6%E7%9A%84%E5%8A%9F%E8%83%BD/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Css-利用伪元素的 content 属性实现 tooltip 插件的功能</a>
+                    <a href="/2020/02/06/Css%20-%20%E5%88%A9%E7%94%A8%E4%BC%AA%E5%85%83%E7%B4%A0%E7%9A%84-content-%E5%B1%9E%E6%80%A7%E5%AE%9E%E7%8E%B0-tooltip-%E6%8F%92%E4%BB%B6%E7%9A%84%E5%8A%9F%E8%83%BD/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Css - 利用伪元素的 content 属性实现 tooltip 插件的功能</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91-CSS/">前端开发/CSS</a>
                     </p>
@@ -925,16 +991,16 @@
         
         <article class="media">
             
-            <a href="/2019/12/06/Vue%E7%BB%84%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%85%AD%E7%A7%8D%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F/" class="media-left">
+            <a href="/2019/12/06/Vue%20-%20%E7%BB%84%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%85%AD%E7%A7%8D%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail small" src="https://user-images.githubusercontent.com/44257305/70319109-7a87cf00-185c-11ea-905c-fc7fae2f22a9.jpg" alt="Vue-组件间的六种通信方式">
+                    <img class="thumbnail small" src="https://user-images.githubusercontent.com/44257305/70319109-7a87cf00-185c-11ea-905c-fc7fae2f22a9.jpg" alt="Vue - 组件间的六种通信方式">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-06T10:57:00.000Z">2019-12-06</time></div>
-                    <a href="/2019/12/06/Vue%E7%BB%84%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%85%AD%E7%A7%8D%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Vue-组件间的六种通信方式</a>
+                    <a href="/2019/12/06/Vue%20-%20%E7%BB%84%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%85%AD%E7%A7%8D%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Vue - 组件间的六种通信方式</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF-Vue/">前端/Vue</a>
                     </p>
@@ -944,37 +1010,18 @@
         
         <article class="media">
             
-            <a href="/2019/12/03/JS%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3/" class="media-left">
+            <a href="/2019/12/03/JS%20-%20%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail small" src="https://user-images.githubusercontent.com/44257305/70061219-da913200-161e-11ea-946f-883d085ce3dd.png" alt="Js-数组方法详解">
+                    <img class="thumbnail small" src="https://user-images.githubusercontent.com/44257305/70061219-da913200-161e-11ea-946f-883d085ce3dd.png" alt="Js - 数组方法详解">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-03T12:54:00.000Z">2019-12-03</time></div>
-                    <a href="/2019/12/03/JS%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Js-数组方法详解</a>
+                    <a href="/2019/12/03/JS%20-%20%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Js - 数组方法详解</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/12/02/%E6%89%8B%E6%9C%BA%E5%8D%A1%EF%BC%9F%E6%B2%A1%E6%9C%89%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4%E4%BA%86%EF%BC%9F%E8%AF%95%E8%AF%95%E6%88%91%E8%BF%99%E4%B8%AA%E5%B7%A5%E5%85%B7%EF%BC%81/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail small" src="https://user-images.githubusercontent.com/44257305/69972569-d0a6fa80-155c-11ea-908a-88af1176e1e0.jpg" alt="手机卡？没有存储空间了？试试这个工具！">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-02T13:44:00.000Z">2019-12-02</time></div>
-                    <a href="/2019/12/02/%E6%89%8B%E6%9C%BA%E5%8D%A1%EF%BC%9F%E6%B2%A1%E6%9C%89%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4%E4%BA%86%EF%BC%9F%E8%AF%95%E8%AF%95%E6%88%91%E8%BF%99%E4%B8%AA%E5%B7%A5%E5%85%B7%EF%BC%81/" class="title has-link-black-ter is-size-6 has-text-weight-normal">手机卡？没有存储空间了？试试这个工具！</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%E5%B0%8F%E5%B7%A5%E5%85%B7-Android/">小工具/Android</a>
                     </p>
                 </div>
             </div>
@@ -990,6 +1037,17 @@
             归档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2020/06/">
@@ -1030,7 +1088,7 @@
                     <span class="level-item">十一月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -1149,7 +1207,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.png" alt="手机卡？没有存储空间了？试试这个工具！" height="28">
+                    <img src="/images/logo.png" alt="Js - 数组方法详解" height="28">
                 
                 </a>
                 <p class="is-size-7">

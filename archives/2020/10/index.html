@@ -8,12 +8,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>标签: vue - 爆开的个人博客</title>
+<title>归档: 2020/10 - 爆开的个人博客</title>
 
 
     <meta property="og:type" content="website">
 <meta property="og:title" content="爆开的个人博客">
-<meta property="og:url" content="http://yoursite.com/tags/vue/index.html">
+<meta property="og:url" content="http://yoursite.com/archives/2020/10/index.html">
 <meta property="og:site_name" content="爆开的个人博客">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
@@ -127,90 +127,39 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+
+<div class="card widget">
     <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/tags">标签</a></li>
-            <li class="is-active"><a href="#" aria-current="page">vue</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/12/06/Vue%20-%20%E7%BB%84%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%85%AD%E7%A7%8D%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F/" class="image is-7by1">
-            <img class="thumbnail" src="https://user-images.githubusercontent.com/44257305/70319109-7a87cf00-185c-11ea-905c-fc7fae2f22a9.jpg" alt="Vue - 组件间的六种通信方式">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
+        <h3 class="tag is-link">
+        十月 2020
+        </h3>
+        <div class="timeline">
         
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-06T10:57:00.000Z">2019-12-06</time>
+            <article class="media">
                 
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%E5%89%8D%E7%AB%AF-Vue/">前端/Vue</a>
+                <a href="/2020/10/20/Postman%20-%20%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" class="media-left">
+                    <p class="image is-64x64">
+                        <img class="thumbnail small" src="https://user-images.githubusercontent.com/44257305/96853854-6c9b6680-148d-11eb-9e88-19a394ba5d27.jpg" alt="Postman - 进阶使用">
+                    </p>
+                </a>
+                
+                <div class="media-content">
+                    <div class="content">
+                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2020-10-20T09:31:00.000Z">2020-10-20</time>
+                        <a href="/2020/10/20/Postman%20-%20%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Postman - 进阶使用</a>
+                        <div class="level article-meta is-mobile">
+                            <div class="level-left">
+                                
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 分钟 读完 (大约 357 个字)
-                </span>
-                
-                
-            </div>
+            </article>
+        
         </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/12/06/Vue%20-%20%E7%BB%84%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%85%AD%E7%A7%8D%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F/">Vue - 组件间的六种通信方式</a>
-            
-        </h1>
-        <div class="content">
-            <html><head></head><body><p>本文借鉴自<a href="https://juejin.im/post/5cde0b43f265da03867e78d3" target="_blank" rel="noopener">组件通信</a>，是我看到的很好的一篇关于Vue组件间通信的文章。</p>
-<p>关于Vue中组件的介绍可以看我的<a href>这篇文章</a>,这里只做一些简单的介绍：</p>
-<p><img src="https://user-images.githubusercontent.com/44257305/70318680-8fb02e00-185b-11ea-9fac-9fe8489d42f0.png" alt="组件之前的关系"></p>
-<p><strong>先看上图↑</strong>， 上面的图是一个Vue项目很基本的部分组件之间的可能出现关系，总结如下：</p>
-<ul>
-<li>A组件有两个子组件： B组件、C组件；</li>
-<li>B组件和C组件之间是同级组件(兄弟组件)；</li>
-<li>B组件和C组件分别有自己的子组件：D组件、F组件 以及 E组件；</li>
-<li>D、E、F组件又同时是A组件的后代组件，反过来A组件是它们的祖先组件；   </li>
-</ul>
-<p>那么以上关系可能就会发生下面几种对应关系之间的通信：</p>
-<ol>
-<li>父子组件之间的通信；</li>
-<li>兄弟组件之间的通信；</li>
-<li>祖先和后代组件之间的通信；</li>
-</ol>
-<hr>
-<h4 id="上有政策下有对策，下面介绍几种能够解决上述问题的方法"><a href="#上有政策下有对策，下面介绍几种能够解决上述问题的方法" class="headerlink" title="上有政策下有对策，下面介绍几种能够解决上述问题的方法"></a>上有政策下有对策，下面介绍几种能够解决上述问题的方法</h4><ul>
-<li><p><strong>props / $emit</strong><br>解决: 父子组件之间的通信问题</p>
-<ul>
-<li>1.父组件向子组件传值<br>示例: parent 组件向 child 组件传递 msg 属性</li>
-</ul>
-</li>
-</ul>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
-        </div>
-        
-        
-        
     </div>
 </div>
-
-
-
-
-
-
 
 
 </div>
