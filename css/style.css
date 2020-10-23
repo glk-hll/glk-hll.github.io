@@ -31,6 +31,13 @@ textarea {
     width: 960px;
   }
 }
+@media screen and (min-width: 1472px) and (max-width: 2600px) {
+  .is-1-column .container,
+  .is-2-column .container {
+    max-width: 1400px;
+    width: 1400px;
+  }
+}
 @media screen and (max-width: 768px) {
   .section {
     padding: 1.5rem 1rem;
@@ -67,9 +74,9 @@ textarea {
 }
 .card .card-image {
   overflow: hidden;
-  padding: 5px 8px 0 8px;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
+  padding: 10px 8px;
 }
 img.thumbnail {
   object-fit: fill;
@@ -524,4 +531,11 @@ figure.highlight .section {
 }
 .gist .file {
   all: initial;
+}
+.icon {
+  width: 5em;
+  height: 5em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
 }
